@@ -1,0 +1,28 @@
+body {
+    font-family: andale mono, monospace;
+    color: #777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+    background: linear-gradient(135deg, #3131319E, #CFCFCF9E)
+}
+
+html {
+    animation: lerpback 42s linear infinite;
+}
+
+@keyframes lerpback {
+    0%, 100% { background: #FBF8CC; }
+    10% { background: #FDE4CF; }
+    20% { background: #FFCFD2; }
+    30% { background: #F1C0E8; }
+    40% { background: #CFBAF0; }
+    50% { background: #A3C4F3; }
+    60% { background: #90DBF4; }
+    70% { background: #8EECF5; }
+    80% { background: #98F5E1; }
+    90% { background: #B9FBC0; }
+}
