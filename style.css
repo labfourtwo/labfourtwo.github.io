@@ -1,28 +1,133 @@
-body {
-    font-family: andale mono, monospace;
-    color: #777;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    
-    background: linear-gradient(135deg, #3131319E, #CFCFCF9E)
+:root {
+    --elem-width: 150px;
+    --elem-height: 400px;
 }
 
 html {
+    overflow: hidden;
     animation: lerpback 42s linear infinite;
 }
 
+body {
+    margin: 0;
+}
+
+.spotlight {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background: radial-gradient(circle at  61.8vw 38.2vh, #FFF, #AAA, #777);
+    opacity: 0.3;
+    mix-blend-mode: luminosity;
+}
+
+.container {
+    position: absolute;
+    top: calc(50vh - (var(--elem-height) / 2)); 
+    width: 100vw;
+    perspective: 50vw;
+    perspective-origin: top;
+}
+
+.carousel {
+    margin: 0 auto;
+    width: var(--elem-width);
+    height: var(--elem-height);
+    transform-style: preserve-3d;
+    animation: rotate 100s linear infinite;
+}
+
+.item {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.item:nth-child(1) {
+    transform: rotateY(0deg) translateZ(50vw);
+}
+
+.item:nth-child(2) {
+    transform: rotateY(45deg) translateZ(50vw);
+}
+
+.item:nth-child(3) {
+    transform: rotateY(90deg) translateZ(50vw);
+}
+
+.item:nth-child(4) {
+    transform: rotateY(135deg) translateZ(50vw);
+}
+
+.item:nth-child(5) {
+    transform: rotateY(180deg) translateZ(50vw);
+}
+
+.item:nth-child(6) {
+    transform: rotateY(225deg) translateZ(50vw);
+}
+
+.item:nth-child(7) {
+    transform: rotateY(270deg) translateZ(50vw);
+}
+
+.item:nth-child(8) {
+    transform: rotateY(315deg) translateZ(50vw);
+}
+
+path {
+    stroke-width: 0.03px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@keyframes rotate {
+    from {
+        transform: translateZ(-50vw) rotateY(0deg);
+    }
+
+    to {
+        transform: translateZ(-50vw) rotateY(360deg);
+    }
+}
+
 @keyframes lerpback {
-    0%, 100% { background: #FBF8CC; }
-    10% { background: #FDE4CF; }
-    20% { background: #FFCFD2; }
-    30% { background: #F1C0E8; }
-    40% { background: #CFBAF0; }
-    50% { background: #A3C4F3; }
-    60% { background: #90DBF4; }
-    70% { background: #8EECF5; }
-    80% { background: #98F5E1; }
-    90% { background: #B9FBC0; }
+    0%, 100% {
+        background: #FBF8CC;
+    }
+
+    10% {
+        background: #FDE4CF;
+    }
+
+    20% {
+        background: #FFCFD2;
+    }
+
+    30% {
+        background: #F1C0E8;
+    }
+
+    40% {
+        background: #CFB7F0;
+    }
+
+    50% {
+        background: #73C4F3;
+    }
+
+    60% {
+        background: #90DBF4;
+    }
+
+    70% {
+        background: #8EECF5;
+    }
+
+    80% {
+        background: #98F5E1;
+    }
+
+    90% {
+        background: #B9FBC0;
+    }
 }
